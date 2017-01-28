@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.3.0"
   s.homepage = "https://github.com/woodruffw/keybase-unofficial"
   s.license = "MIT"
-  s.add_runtime_dependency "faraday"
+  s.add_runtime_dependency "faraday", "~> 0"
 end
