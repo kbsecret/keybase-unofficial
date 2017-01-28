@@ -19,7 +19,7 @@ module Keybase
 
     # @return [Array<Keybase::User>] a list of all local users known to Keybase
     def users
-      CONFIG_HASH["users"].map { |_, v| Keybase::User.new(v) }
+      CONFIG_HASH["users"].map { |_, v| Keybase::LocalUser.new(v) }
     end
 
     # @return [String] the user's private KBFS directory

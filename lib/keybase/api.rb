@@ -4,6 +4,7 @@ require "ostruct"
 
 module Keybase
   # Represents (parts of) the Keybase REST API.
+  # @see https://keybase.io/docs/api/1.0
   class API
     # The base URL for the majority of API calls.
     BASE_URL = "https://keybase.io/_/api/1.0"

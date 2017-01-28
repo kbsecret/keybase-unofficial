@@ -1,7 +1,7 @@
 module Keybase
   # Represents a user known to the local Keybase process.
   # These are (presumably) users that have been logged into locally.
-  class User
+  class LocalUser
     # @return [String] the device's unique identifier
     attr_reader :device
 
@@ -15,11 +15,16 @@ module Keybase
     # @note I have no idea what this field does.
     attr_reader :salt
 
-    def initialize(hsh)
-      @device = hsh["device"]
-      @id = hsh["id"]
-      @name = hsh["name"]
-      @salt = hsh["salt"]
+    # @param fields [Hash] the user's configuration fields
+    # @option fields device [String] the device's unique identifier
+    # @option fields id [String] the user's unique identifier
+    # @option fields name [String] the user's Keybase username
+    # @option fields salt [String] some kind of salt
+    def initialize(fields)
+      @device = fields["device"]
+      @id = fields["id"]
+      @name = fields["name"]
+      @salt = fields["salt"]
     end
   end
 end
