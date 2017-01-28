@@ -17,8 +17,9 @@ module Keybase
       CONFIG_HASH["current_user"]
     end
 
-    # @return [Array<Keybase::User>] a list of all local users known to Keybase
-    def users
+    # @return [Array<Keybase::LocalUser>] a list of all local users known
+    #  to Keybase
+    def local_users
       CONFIG_HASH["users"].map { |_, v| Keybase::LocalUser.new(v) }
     end
 
