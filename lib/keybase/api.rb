@@ -1,7 +1,6 @@
 require "faraday"
 require "json"
 require "ostruct"
-require "uri"
 
 module Keybase
   # Represents (parts of) the Keybase REST API.
