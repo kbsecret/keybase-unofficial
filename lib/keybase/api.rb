@@ -8,9 +8,12 @@ module Keybase
     BASE_URL = "https://keybase.io/_/api/1.0"
 
     class << self
-      def lookup(*users)
-        users = users.join(",")
-        response = Faraday.get "#{BASE_URL}/user/lookup.json", usernames: users
+      def lookup(**query)
+        if query[:usernames]
+          query[:usernames] = query[:usernames].join(",")
+        end
+
+        response = Faraday.get "#{BASE_URL}/user/lookup.json", query
         JSON.parse(response.body, object_class: OpenStruct)
       end
 
