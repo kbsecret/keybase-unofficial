@@ -7,6 +7,11 @@ An unofficial ruby library for Keybase and the Keybase API.
 
 Work in progress.
 
+### Documentation
+
+Documentation for the current release can be found on
+[RubyDoc](http://www.rubydoc.info/gems/keybase-unofficial/).
+
 ### Example
 
 ```ruby
