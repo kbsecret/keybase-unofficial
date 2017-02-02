@@ -37,7 +37,7 @@ module Keybase
     def running?
       # is there a more efficient way to do this that doesn't involve an exec?
       Dir["/proc/[0-9]*/comm"].any? do |comm|
-        File.read(comm).chomp == "keybase"
+        File.read(comm).chomp == "keybase" rescue false # hooray for TOCTOU
       end
     end
 
