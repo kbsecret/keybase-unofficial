@@ -3,6 +3,13 @@ module Keybase
   class KeybaseError < RuntimeError
   end
 
+  # Raised if a Keybase installation can't be found.
+  class KeybaseNotInstalledError < KeybaseError
+    def initialize
+      super "keybase needs to be installed"
+    end
+  end
+
   # Raised whenever Keybase is not running locally.
   class KeybaseNotRunningError < KeybaseError
     def initialize

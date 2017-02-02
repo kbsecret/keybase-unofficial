@@ -9,6 +9,9 @@ module Keybase
     # The Keybase configuration file.
     CONFIG_FILE = File.join(CONFIG_DIR, "config.json").freeze
 
+    # there's not much this library can do without a local config
+    raise KeybaseNotInstalledError unless File.file?(CONFIG_FILE)
+
     # The hash from Keybase's configuration file.
     CONFIG_HASH = JSON.parse(File.read(CONFIG_FILE)).freeze
 
