@@ -23,7 +23,7 @@ module Keybase
       # @see https://keybase.io/docs/api/1.0/call/user/lookup
       def lookup(**query)
         if query[:usernames]
-          query[:usernames] = query[:usernames].join(",")
+          query[:usernames] = U[query[:usernames]]
         end
 
         response = Faraday.get "#{BASE_URL}/user/lookup.json", query

@@ -1,8 +1,10 @@
 require_relative "keybase/exceptions"
 require_relative "keybase/configuration"
+require_relative "keybase/u"
 require_relative "keybase/local_user"
 require_relative "keybase/kbfs"
 require_relative "keybase/api"
+require_relative "keybase/chat"
 
 # The primary namespace for keybase-unofficial.
 module Keybase
