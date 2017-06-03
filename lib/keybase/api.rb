@@ -26,8 +26,7 @@ module Keybase
       def lookup(**query)
         query[:usernames] = U[query[:usernames]]
 
-        response = Faraday.get "#{BASE_URL}/user/lookup.json", query
-        JSON.parse(response.body, object_class: OpenStruct)
+        fetch_and_structify "/user/lookup.json", query
       end
 
       # Search Keybase for identity components.
@@ -37,8 +36,7 @@ module Keybase
       #  Keybase::API.autocomplete "William Woodruff"
       # @see https://keybase.io/docs/api/1.0/call/user/autocomplete
       def autocomplete(query)
-        response = Faraday.get "#{BASE_URL}/user/autocomplete.json", q: query
-        JSON.parse(response.body, object_class: OpenStruct)
+        fetch_and_structify "/user/autocomplete.json", q: query
       end
 
       # Discover Keybase users from external identities.
@@ -53,8 +51,7 @@ module Keybase
       #  `hackernews`, `reddit`, `github`, etc.)
       # @see https://keybase.io/docs/api/1.0/call/user/discover
       def discover(**query)
-        response = Faraday.get "#{BASE_URL}/user/discover.json", query
-        JSON.parse(response.body, object_class: OpenStruct)
+        fetch_and_structify "/user/discover.json", query
       end
 
       # Retrieve the current site-wide Merkle root hash.
@@ -65,8 +62,7 @@ module Keybase
       # @return [OpenStruct] a struct mapping of the JSON response
       # @see https://keybase.io/docs/api/1.0/call/merkle/root
       def merkle_root(**query)
-        response = Faraday.get "#{BASE_URL}/merkle/root.json", query
-        JSON.parse(response.body, object_class: OpenStruct)
+        fetch_and_structify "/merkle/root.json", query
       end
 
       # Retrieve a Merkle node corresponding to a given hash.
@@ -75,7 +71,16 @@ module Keybase
       # @return [OpenStruct] a struct mapping of the JSON response
       # @see https://keybase.io/docs/api/1.0/call/merkle/block
       def merkle_block(**query)
-        response = Faraday.get "#{BASE_URL}/merkle/block.json", query
+        fetch_and_structify "/merkle/block.json", query
+      end
+
+      # Make a GET request to the given endpoint with the given parameters.
+      # @param endpoint [String] the keybase API endpoint
+      # @param query [Hash] the request parameters
+      # @return [OpenStruct] a struct mapping of the JSON response
+      # @api private
+      def fetch_and_structify(endpoint, query)
+        response = Faraday.get "#{BASE_URL}#{endpoint}", query
         JSON.parse(response.body, object_class: OpenStruct)
       end
     end
