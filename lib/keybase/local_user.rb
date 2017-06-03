@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Keybase
   # Represents a user known to the local Keybase process.
   # These are (presumably) users that have been logged into locally.

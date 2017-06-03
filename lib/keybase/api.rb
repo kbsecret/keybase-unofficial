@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "faraday"
 require "json"
 require "ostruct"
@@ -22,9 +24,7 @@ module Keybase
       #  `hackernews`, `reddit`, `github`, etc.)
       # @see https://keybase.io/docs/api/1.0/call/user/lookup
       def lookup(**query)
-        if query[:usernames]
-          query[:usernames] = U[query[:usernames]]
-        end
+        query[:usernames] = U[query[:usernames]]
 
         response = Faraday.get "#{BASE_URL}/user/lookup.json", query
         JSON.parse(response.body, object_class: OpenStruct)

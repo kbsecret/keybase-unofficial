@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Keybase
   # A top-level exception for the library.
   class KeybaseError < RuntimeError

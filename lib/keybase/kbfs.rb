@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Keybase
   # Represents the Keybase filesystem.
   # @note This is just a stub for the time being.

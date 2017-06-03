@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "open3"
 require "json"
 require "ostruct"
@@ -6,7 +8,7 @@ module Keybase
   # Represents Keybase's JSON chat API.
   class Chat
     # The initial arguments to pass when executing Keybase for chatting.
-    CHAT_EXEC_ARGS = ["keybase", "chat", "api"]
+    CHAT_EXEC_ARGS = %w[keybase chat api].freeze
 
     class << self
       # @param meth [Symbol] the chat method
@@ -75,7 +77,7 @@ module Keybase
           },
           message: {
             body: message,
-          }
+          },
         }
 
         chat_call payload
@@ -109,7 +111,7 @@ module Keybase
           message_id: id,
           message: {
             body: message,
-          }
+          },
         }
 
         chat_call payload

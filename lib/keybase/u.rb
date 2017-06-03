@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Keybase
   # A class for converting arrays of users into Keybase-style strings.
   class U
