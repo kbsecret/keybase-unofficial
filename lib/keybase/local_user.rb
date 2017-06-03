@@ -24,9 +24,9 @@ module Keybase
     # @option fields salt [String] some kind of salt
     def initialize(fields)
       @device = fields["device"]
-      @id = fields["id"]
-      @name = fields["name"]
-      @salt = fields["salt"]
+      @id     = fields["id"]
+      @name   = fields["name"]
+      @salt   = fields["salt"]
     end
   end
 end
