@@ -24,7 +24,7 @@ module Keybase
         }.to_json
       end
 
-      # @param payload [String]
+      # @param payload [String] the JSON payload to send to the chat API
       # @return [OpenStruct] a struct mapping of the JSON response
       # @api private
       def chat_call(payload)
@@ -38,6 +38,7 @@ module Keybase
       end
 
       # List the user's inbox.
+      # @param topic_type [String] the topic type to list by
       # @return [OpenStruct] a struct mapping of the JSON response
       def list_inbox(topic_type: nil)
         payload = envelope :list, options: {
