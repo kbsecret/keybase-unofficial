@@ -6,7 +6,9 @@ module Keybase
   # Methods and constants related to a local Keybase installation.
   module Configuration
     # The Keybase configuration directory.
-    CONFIG_DIR = File.expand_path("~/.config/keybase").freeze
+    CONFIG_DIR = Gem.win_platform? ?
+                   File.expand_path("#{ENV['LOCALAPPDATA']}/Keybase").freeze :
+                   File.expand_path("~/.config/keybase").freeze
 
     # The Keybase configuration file.
     CONFIG_FILE = File.join(CONFIG_DIR, "config.json").freeze
