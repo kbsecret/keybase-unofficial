@@ -29,6 +29,17 @@ module Keybase
         fetch_and_structify "/user/lookup.json", query
       end
 
+      # Test whether the given user exists on Keybase.
+      # @param user [String] the username to test
+      # @return [Boolean] whether or not the user exists
+      # @example
+      #  Keybase::API.user? "yossarian" # => true
+      #  Keybase::API.user? "idonotexist" # => false
+      # @note This call only works on Keybase usernames, not external identities.
+      def user?(user)
+        lookup(username: user).status.code.zero?
+      end
+
       # Search Keybase for identity components.
       # @param query [String] the string to search for
       # @return [OpenStruct] a struct mapping of the JSON response
