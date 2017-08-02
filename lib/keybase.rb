@@ -11,7 +11,7 @@ require_relative "keybase/chat"
 # The primary namespace for keybase-unofficial.
 module Keybase
   # keybase-unofficial's current version
-  VERSION = "0.1.0"
+  VERSION = "0.2.0"
 
   extend Configuration
 end
