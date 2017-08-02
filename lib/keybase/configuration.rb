@@ -21,6 +21,9 @@ module Keybase
     # The hash from Keybase's configuration file.
     CONFIG_HASH = JSON.parse(File.read(CONFIG_FILE)).freeze
 
+    # The mountpoint for KBFS.
+    KBFS_MOUNT = "/keybase"
+
     # @return [String] the currently logged-in user
     def current_user
       CONFIG_HASH["current_user"]
@@ -34,12 +37,12 @@ module Keybase
 
     # @return [String] the user's private KBFS directory
     def private_dir
-      "/keybase/private/#{current_user}"
+      File.join(KBFS_MOUNT, "private", current_user)
     end
 
     # @return [String] the user's public KBFS directory
     def public_dir
-      "/keybase/public/#{current_user}"
+      File.join(KBFS_MOUNT, "public", current_user)
     end
 
     # @return [Boolean] whether or not Keybase is currently running
