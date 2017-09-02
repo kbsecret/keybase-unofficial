@@ -16,7 +16,7 @@ module Keybase
     CONFIG_FILE = File.join(CONFIG_DIR, "config.json").freeze
 
     # there's not much this library can do without a local config
-    raise KeybaseNotInstalledError unless File.file?(CONFIG_FILE)
+    raise Exceptions::KeybaseNotInstalledError unless File.file?(CONFIG_FILE)
 
     # The hash from Keybase's configuration file.
     CONFIG_HASH = JSON.parse(File.read(CONFIG_FILE)).freeze
@@ -58,9 +58,9 @@ module Keybase
     end
 
     # @return [String] the running Keybase's version string
-    # @raise [KeybaseNotRunningError] if Keybase is not running
+    # @raise [Exceptions::KeybaseNotRunningError] if Keybase is not running
     def running_version
-      raise KeybaseNotRunningError unless Keybase.running?
+      raise Exceptions::KeybaseNotRunningError unless Keybase.running?
       `keybase --version`.split[2]
     end
   end
