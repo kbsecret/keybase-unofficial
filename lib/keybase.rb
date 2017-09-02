@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "keybase/exceptions"
-require_relative "keybase/configuration"
+require_relative "keybase/config"
 require_relative "keybase/u"
 require_relative "keybase/local_user"
 require_relative "keybase/kbfs"
@@ -13,5 +13,5 @@ module Keybase
   # keybase-unofficial's current version
   VERSION = "0.3.0"
 
-  extend Configuration
+  extend Config
 end

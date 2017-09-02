@@ -4,7 +4,7 @@ require "json"
 
 module Keybase
   # Methods and constants related to a local Keybase installation.
-  module Configuration
+  module Config
     # The Keybase configuration directory.
     CONFIG_DIR = if Gem.win_platform?
                    File.expand_path("#{ENV["LOCALAPPDATA"]}/Keybase").freeze
