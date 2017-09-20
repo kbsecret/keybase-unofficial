@@ -1,15 +1,29 @@
+PATH
+  remote: .
+  specs:
+    keybase-unofficial (0.5.1)
+      keybase-unofficial-api (~> 0)
+      keybase-unofficial-core (~> 1.0)
+      keybase-unofficial-local (~> 0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    faraday (0.11.0)
+    faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
+    keybase-unofficial-api (0.0.3)
+      faraday (~> 0)
+      keybase-unofficial-core (~> 1.0)
+    keybase-unofficial-core (1.0.0)
+    keybase-unofficial-local (0.0.3)
+      keybase-unofficial-core (~> 1.0)
     multipart-post (2.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  faraday
+  keybase-unofficial!
 
 BUNDLED WITH
-   1.14.3
+   1.15.4
