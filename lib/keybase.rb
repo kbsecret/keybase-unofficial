@@ -4,8 +4,8 @@ require "keybase/core"
 require "keybase/api"
 require "keybase/local"
 
-# The primary namespace for keybase-unofficial.
+# The primary namespace.
 module Keybase
-  # keybase-unofficial's current version
-  VERSION = "0.5.0"
+  # The current version of `keybase-unofficial`.
+  VERSION = "0.5.0.pre.1"
 end
