@@ -15,7 +15,7 @@ $ gem install keybase-unofficial
 
 ### Documentation
 
-Documentation for keybase-unofficial is split across the three sublibraries:
+Documentation for keybase-unofficial is split across its three sublibraries:
 
 * [keybase-unofficial-core docs](http://www.rubydoc.info/gems/keybase-unofficial-core/)
 * [keybase-unofficial-api docs](http://www.rubydoc.info/gems/keybase-unofficial-api/)
