@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/keybase"
+require_relative "lib/version"
 
 Gem::Specification.new do |s|
   s.name                  = "keybase-unofficial"
