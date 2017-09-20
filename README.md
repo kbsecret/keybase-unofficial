@@ -15,19 +15,22 @@ $ gem install keybase-unofficial
 
 ### Documentation
 
-Documentation for the current release can be found on
-[RubyDoc](http://www.rubydoc.info/gems/keybase-unofficial/).
+Documentation for keybase-unofficial is split across the three sublibraries:
 
-### Example
+* [keybase-unofficial-core docs](http://www.rubydoc.info/gems/keybase-unofficial-core/)
+* [keybase-unofficial-api docs](http://www.rubydoc.info/gems/keybase-unofficial-api/)
+* [keybase-unofficial-local docs](http://www.rubydoc.info/gems/keybase-unofficial-local/)
+
+### Examples
 
 ```ruby
 require "keybase"
 
 # reads your local configuration
-Keybase.current_user # => "yossarian"
+Keybase::Local.current_user # => "yossarian"
 
 # Chatting API
-Keybase::Chat.send_message ["yossarian", "you"], "hello"
+Keybase::Local::Chat.send_message ["yossarian", "you"], "hello"
 
 # REST API
 person = Keybase::API.lookup username: "yossarian"
