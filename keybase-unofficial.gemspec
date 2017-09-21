@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "keybase-unofficial-core", "~> 1.0"
   s.add_runtime_dependency "keybase-unofficial-api", "~> 0"
-  s.add_runtime_dependency "keybase-unofficial-local", "~> 0"
+  s.add_runtime_dependency "keybase-unofficial-local", "~> 0.0.4"
 end
