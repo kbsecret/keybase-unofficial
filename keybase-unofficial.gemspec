@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.email                 = "william@tuffbizz.com"
   s.files                 = Dir["LICENSE", "*.md", ".yardopts", "lib/**/*"]
   s.required_ruby_version = ">= 2.3.0"
-  s.homepage              = "https://github.com/woodruffw/keybase-unofficial"
+  s.homepage              = "https://github.com/kbsecret/keybase-unofficial"
   s.license               = "MIT"
 
   s.add_runtime_dependency "keybase-unofficial-core", "~> 1.0"
