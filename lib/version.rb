@@ -3,5 +3,5 @@
 # The primary namespace.
 module Keybase
   # The current version of `keybase-unofficial`.
-  VERSION = "0.8.0"
+  VERSION = "0.9.0"
 end
