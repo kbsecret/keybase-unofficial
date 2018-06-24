@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name                  = "keybase-unofficial"
   s.version               = Keybase::VERSION
   s.summary               = "keybase-unofficial - An unofficial library for Keybase."
-  s.description           = <<~EOS
+  s.description           = <<~DESCRIPTION
                               An unofficial library for Keybase.
 
                               This library is a wrapper over three individual libraries.
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
                               keybase-unofficial-api provides an interface to Keybase's
                               REST API, and keybase-unofficial-local provides an interface
                               to a local Keybase installation's functionality.
-                            EOS
+                            DESCRIPTION
   s.authors               = ["William Woodruff"]
   s.email                 = "william@tuffbizz.com"
   s.files                 = Dir["LICENSE", "*.md", ".yardopts", "lib/**/*"]
