@@ -2,22 +2,26 @@ PATH
   remote: .
   specs:
     keybase-unofficial (0.5.1)
-      keybase-unofficial-api (~> 0)
+      keybase-unofficial-api (~> 0.1)
       keybase-unofficial-core (~> 1.0)
-      keybase-unofficial-local (~> 0)
+      keybase-unofficial-local (~> 0.6)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    faraday (0.13.1)
+    faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-    keybase-unofficial-api (0.0.3)
+    ffi (1.11.1)
+    keybase-unofficial-api (0.1.0)
       faraday (~> 0)
       keybase-unofficial-core (~> 1.0)
     keybase-unofficial-core (1.0.0)
-    keybase-unofficial-local (0.0.3)
+    keybase-unofficial-local (0.6.0)
       keybase-unofficial-core (~> 1.0)
-    multipart-post (2.0.0)
+      sys-filesystem (~> 1.1)
+    multipart-post (2.1.1)
+    sys-filesystem (1.2.0)
+      ffi
 
 PLATFORMS
   ruby
